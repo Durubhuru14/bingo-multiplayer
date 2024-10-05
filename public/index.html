@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Bingo multiplayer by Durubhuru</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="/script.js" defer></script>
+</head>
+<body>
+ <!-- Custome Alert HTML -->
+  <div class="alert">
+    <p class="alert-head">
+      <span class="alert-heading"><ion-icon name="megaphone-outline"></ion-icon>Announcement</span>
+    <ion-icon class="close" name="close-outline"></ion-icon>
+    </p>
+    <p class="alert-body">This can be changed in javascript</p>
+    </div>
+  </div>
+<!-- Custome Prompt HTML -->
+  <div class="prompt-outer">
+    <div class="prompt-heading">
+      <ion-icon name="terminal-outline"></ion-icon>
+      <span>Prompt</span>
+    </div>
+    <div class="prompt">
+      <div class="username-input">
+        <span>Username:</span>
+        <input name="username" type="text" placeholder="Enter your username">
+      </div>
+      <div class="room-id-input">
+        <span>Room ID:</span>
+        <input name="room-id" type="text" placeholder="Enter Room ID">
+      </div>
+      <button class="submit-btn">Submit</button>
+    </div>
+  </div>
+  <!-- Game HTML -->
+ <div class="game-headings">
+    <div class="game-main-heading">
+      BINGO
+    </div>
+    <div class="game-sub-heading">By Durubhuru™</div>
+  </div>
+  <main>
+    <div class="number-ball-container">
+      <div class="number-ball">
+      <div class="number-ball-content">
+         <div class="text">R</div>
+        <div class="number">14</div>
+      </div>
+      </div>
+    </div>
+    <button class="roll-ball-btn">Roll The Ball!</button>
+    <div class="game">
+      <div class="cell-dummy initials">B</div>
+      <div class="cell-dummy initials">I</div>
+      <div class="cell-dummy initials">N</div>
+      <div class="cell-dummy initials">G</div>
+      <div class="cell-dummy initials">O</div>
+    </div>
+    <footer>
+       <i>This above content is trademarked and copyrighted by <b><i>Durubhuru&#169;</i></b><i>
+    </footer>
+  </main>
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+</body>
+</html>

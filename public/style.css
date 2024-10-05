@@ -1,0 +1,284 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #121212;
+  height: 100vh;
+  width: 100vw;
+}
+
+/* CSS for alert */
+
+.alert, .prompt-outer {
+  display: none;
+  background: #20315b;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+  color: lightgray;
+  border-radius: 7px;
+  width: 88%;
+  transition: all 2s;
+  z-index: 1000;
+  
+}
+
+.alert-head {
+  width: 100%;
+}
+
+.alert-head > .alert-heading {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2%;
+  font-size: 13pt;
+  padding-left: 3%;
+  font-weight: bold;
+}
+
+ion-icon[name="megaphone-outline"],ion-icon[name="terminal-outline"] {
+  display: inline-block;
+  background: #141c30;
+  padding: 5px;
+  margin-right: 5px;
+  border-radius: 6px;
+}
+
+.alert-body {
+  padding-top: 4%;
+  padding-bottom: 6%;
+  padding-left: 3%;
+  width: 100%;
+}
+
+ion-icon[name="close-outline"] {
+  display: inline-block;
+  background: rgba(233, 30, 98,0.4);
+  padding: 5px;
+  border-radius: 6px;
+  position: absolute;
+  right: 1%;
+  top: 1vw;
+  color: #E91E63;
+  border: 1px solid #E91E63;
+}
+
+/* CSS for prompt */
+
+.prompt-outer {
+  justify-content: center;
+  align-items: center;
+  flex-flow: column;
+  box-shadow: inset 72px 10px 97px -52px rgba(12, 214, 97, 0.6);
+}
+.prompt {
+  width: 92%;
+}
+
+.prompt-outer > .prompt-heading > span {
+  color: #0cd661;
+}
+
+.prompt-heading {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 16pt;
+  font-weight: bold;
+  position: relative;
+  top: 0;
+  left: 4%;
+  margin-top: 4px;
+  align-self: flex-start;
+}
+
+.username-input, .room-id-input {
+  margin-top: 1vh;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: column;
+}
+
+.username-input > span, .room-id-input > span {
+  align-self: flex-start;
+  font-weight: 600;
+  font-size: 12pt;
+}
+
+ion-icon[name="terminal-outline"] {
+  color: #0cd661;
+}
+
+.room-id-input{
+  margin-top: 1%;
+}
+
+.submit-btn {
+  display: block;
+  margin-top: 2vh;
+  margin-bottom: 2%;
+  outline: none;
+  background: rgba(96, 198, 137, 0.5);
+  padding: 5px;
+  border-radius: 6px;
+  color: #0cd661;
+  border: 1px solid #0cd661;
+  font-size: 12pt;
+  font-weight: bold;
+}
+
+/* As outer-prompt's width is 88% of 100vw i.e. 88vw. Therefore, the width of prompt which is 92% of outer-prompt's width will be 92/100 * 88vw = 80.96vw ~ 80 vw; */
+
+.username-input > input, .room-id-input > input {
+  width: 80.96vw;
+  margin-top: 4px;
+  padding: 6px;
+  outline: none;
+  border: 1px solid #F8F8F8;
+  background-color: #20315b;
+  color: lightgrey;
+  transition: all .5s;
+  border-radius: 6px;
+  font-size: 11pt;
+}
+
+.username-input > input:focus, .room-id-input > input:focus {
+  border: 2px solid #0cd661;
+}
+
+@font-face {
+    font-family: 'neontubes';
+  src: url("https://bitbucket.org/kennethjensen/webfonts/raw/fc13c1cb430a0e9462da56fe3f421ff7af72db71/neontubes/neontubes-webfont.eot");
+  src: url("https://bitbucket.org/kennethjensen/webfonts/raw/fc13c1cb430a0e9462da56fe3f421ff7af72db71/neontubes/neontubes-webfont.eot?#iefix") format("embedded-opentype"), url("https://bitbucket.org/kennethjensen/webfonts/raw/fc13c1cb430a0e9462da56fe3f421ff7af72db71/neontubes/neontubes-webfont.woff2") format("woff2"), url("https://bitbucket.org/kennethjensen/webfonts/raw/fc13c1cb430a0e9462da56fe3f421ff7af72db71/neontubes/neontubes-webfont.woff") format("woff"), url("https://bitbucket.org/kennethjensen/webfonts/raw/fc13c1cb430a0e9462da56fe3f421ff7af72db71/neontubes/neontubes-webfont.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  }
+  .game-headings {
+    font-family: 'neontubes';
+    height: 14vh;
+    padding-top: 1vh;
+    width: 100vw;
+    line-height: 7vh;
+    text-align: center;
+    text-justify: center;
+  }
+  .game-main-heading {
+    font-size: 15vw;
+    color: #ffd9e2;
+  text-shadow: 0 0 0 transparent, 0 0 10px #ff003c, 0 0 20px rgba(255, 0, 60, 0.5), 0 0 40px #ff003c, 0 0 100px #ff003c, 0 0 200px #ff003c, 0 0 300px #ff003c, 0 0 500px #ff003c, 0 0 1000px #ff003c;
+  -webkit-animation: blink 4s infinite alternate;
+          animation: blink 4s infinite alternate;
+  }
+  .game-sub-heading {
+  color: #d4eaff;
+  font-size: 8vw;
+  text-shadow: 0 0 0 transparent, 0 0 10px #2695ff, 0 0 20px rgba(38, 149, 255, 0.5), 0 0 40px #2695ff, 0 0 100px #2695ff, 0 0 200px #2695ff, 0 0 300px #2695ff, 0 0 500px #2695ff;
+  -webkit-animation: buzz 0.01s infinite alternate;
+          animation: buzz 0.01s infinite alternate;
+  }
+  @keyframes buzz {
+  70% {
+    opacity: 0.75;
+  }
+}
+@keyframes blink {
+  40% {
+    opacity: 1;
+  }
+  42% {
+    opacity: 0.8;
+  }
+  43% {
+    opacity: 1;
+  }
+  45% {
+    opacity: 0.2;
+  }
+  46% {
+    opacity: 1;
+  }
+}
+main {
+  height: calc(100vh - 14vh);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: column;
+}
+.game {
+  height: 96%;
+  width: 96%;
+  color: white;
+  display: grid;
+  grid-template-columns: repeat(5,20%);
+  grid-template-rows: repeat(6,14%);
+}
+.cells,.cell-dummy {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #FF0B6AD1;
+  font-size: 4.5vmin;
+}
+.cell-dummy.initials {
+  background: #C2186B8C;
+  font-weight: bold;
+  font-size: 6vmin;
+}
+footer {
+  color: lightgrey;
+  width: 100vw;
+  text-align: center;
+  opacity: 0.5;
+  font-size: 4vmin;
+}
+.number-ball-container {
+  height: 200px;
+  width: 200px;
+  position: relative;
+}
+.number-ball {
+  background: radial-gradient(circle at 70px 80px, #21c2fddc,
+    rgb(2, 63, 150), rgb(0, 23, 44), rgb(0, 0, 3));
+  border: 0px;
+  border-radius: 50%;
+  position: absolute;
+  height: 120px;
+  width: 120px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: column;
+}
+.number-ball-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: column;
+  background: white;
+  border-radius: 50%;
+  height: 50%;
+  width: 50%;
+}
+.roll-ball-btn {
+  border: 1px solid #60c689;
+  background: rgba(96, 198, 137, 0.4);
+  color: whitesmoke;
+  padding: 8px;
+  margin-bottom: 2vh;
+  border-radius: 6px;
+  font-size: 4.5vmin;
+}
+.text {
+  font-weight: bold;
+  font-size: 4vmin;
+}
