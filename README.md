@@ -1,4 +1,4 @@
-# Project Name
+# Bingo Mulitplayer
 
 This project is a simple Node.js application designed to demonstrate core concepts of JavaScript and server-side programming. I initially started working on this project during my 11th grade but couldn't complete it back then. Now, after almost two years, I have finally managed to finish it. The application is a simple bingo-multiplayer game built using Socket.io for real-time communication. Although it has some limitations (like client-side winner validation, which makes it prone to cheating), still though it served as excellent hands-on practice for making multiplayer games on web. 
 
