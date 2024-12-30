@@ -8,7 +8,7 @@ I don't plan to abandon this project. In the future, I aim to improve it by inte
 
 Make sure you have the following installed on your system:
 
-- Node.js v22.11.0 (or the specific version required by the project)
+- Node.js v22.11.0 or higher
 - Git (optional, for cloning the repository)
 
 ## Installation
