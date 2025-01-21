@@ -86,7 +86,7 @@ export const rollBall = (cells, username, roomId, socket) => {
     });
     cells.forEach((cell) => {
         if (cell.textContent === number.toString()) {
-            cell.style.border = "2px solid #0cd661";
+            cell.style.border = "1px solid #0cd661";
             cell.addEventListener("click", () => {
                 cell.style.transition = "0.5s";
                 cell.style.color = "#4BB543";

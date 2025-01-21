@@ -7,9 +7,11 @@ export const promptSubmit = (promptOuter, startGameBtn, socket) => {
 
     // Validation: Check if username or roomId is empty
     if (!username || !roomId) {
-        alert(
+        popup(
+            "",
             "Username and Room ID cannot be empty. Please fill in both fields."
         );
+
         promptOuter.style.display = "inline-flex";
         return;
     }
@@ -17,7 +19,7 @@ export const promptSubmit = (promptOuter, startGameBtn, socket) => {
     socket.emit("join-room", username, roomId);
     // If game is already started don't let user join
     socket.on("failed-to-join-room", (username, msg) => {
-        alert(msg);
+        popup("", msg)
         promptOuter.style.display = "inline-flex";
         return;
     });

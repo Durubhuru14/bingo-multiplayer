@@ -37,7 +37,9 @@ body {
     color: var(--elem-text-color);
     border-radius: 7px;
     padding: 10px;
-    width: 88%;
+    max-width: 1280px;
+    min-width: 310px;
+    width: 60%;
     transition: all 2s;
     z-index: 4;
 }
@@ -95,7 +97,7 @@ body {
     position: absolute;
     height: 100vh;
     width: 100vw;
-    display: none
+    display: none;
 }
 
 .result-screen {
@@ -107,7 +109,9 @@ body {
     transform: translate(-50%, -50%);
     color: var(--elem-text-color);
     border-radius: 7px;
-    width: 88%;
+    max-width: 1280px;
+    min-width: 310px;
+    width: 60%;
     padding: 10px;
     transition: all 2s;
     z-index: 10;
@@ -141,15 +145,15 @@ ion-icon[name="sad-outline"] {
 }
 
 .show-result {
-  outline: none;
-  border: 1px solid #60c689;
-  background: rgba(96, 198, 137, 0.4);
-  color: whitesmoke;
-  padding: 8px;
-  margin-bottom: 2vh;
-  border-radius: 6px;
-  cursor: pointer;
-  font-size: 1.1em;
+    outline: none;
+    border: 1px solid #60c689;
+    background: rgba(96, 198, 137, 0.4);
+    color: whitesmoke;
+    padding: 8px;
+    margin-bottom: 2vh;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1.1em;
 }
 
 .restart-btn {
@@ -167,11 +171,16 @@ ion-icon[name="sad-outline"] {
 /* CSS for alert */
 
 .alert-wrapper {
-    z-index: 5;
+    z-index: 11;
     display: none;
     position: absolute;
     height: 100vh;
     width: 100vw;
+}
+
+div.alert {
+    width: 70%;
+    border: 2px solid #141c30;
 }
 
 .alert,
@@ -184,7 +193,9 @@ ion-icon[name="sad-outline"] {
     transform: translate(-50%, -50%);
     color: var(--elem-text-color);
     border-radius: 7px;
-    width: 88%;
+    max-width: 1280px;
+    min-width: 310px;
+    width: 60%;
     transition: all 2s;
     z-index: 10;
 }
@@ -197,9 +208,9 @@ ion-icon[name="sad-outline"] {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    margin-top: 2%;
+    margin-top: 0.725rem;
     font-size: 13pt;
-    padding-left: 3%;
+    padding-left: 0.5rem;
     font-weight: bold;
 }
 
@@ -214,16 +225,15 @@ ion-icon[name="people-circle-outline"] {
 }
 
 .alert-body {
-    padding-top: 4%;
-    padding-bottom: 6%;
-    padding-left: 3%;
+    padding: 0.5rem 0;
+    padding-left: 0.5rem;
     width: 100%;
 }
 
 ion-icon[name="close-outline"] {
     display: inline-block;
     cursor: pointer;
-    background: rgba(233, 30, 98, 0.4);
+    background: rgba(233, 30, 98, 0.2);
     padding: 5px;
     border-radius: 6px;
     position: absolute;
@@ -231,6 +241,7 @@ ion-icon[name="close-outline"] {
     top: 1vw;
     color: var(--red-color);
     border: 1px solid var(--red-color);
+    font-weight: bolder;
 }
 
 /* CSS for prompt */
@@ -239,10 +250,15 @@ ion-icon[name="close-outline"] {
     justify-content: center;
     align-items: center;
     flex-flow: column;
-    box-shadow: inset 72px 10px 97px -52px rgba(12, 214, 97, 0.6);
 }
 .prompt {
-    width: 92%;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    padding: 0 4%;
 }
 
 .prompt-outer > .prompt-heading > span {
@@ -269,6 +285,7 @@ ion-icon[name="close-outline"] {
     justify-content: center;
     align-items: center;
     flex-flow: column;
+    width: 100%;
 }
 
 .username-input > span,
@@ -291,34 +308,33 @@ ion-icon[name="terminal-outline"] {
     margin-top: 2vh;
     margin-bottom: 2%;
     outline: none;
-    background: rgba(96, 198, 137, 0.5);
+    background: rgba(96, 198, 137, 0.2);
     padding: 5px;
     border-radius: 6px;
     color: var(--green-color);
     border: 1px solid var(--green-color);
     font-size: 12pt;
     font-weight: bold;
+    cursor: pointer;
 }
-
-/* As outer-prompt's width is 88% of 100vw i.e. 88vw. Therefore, the width of prompt which is 92% of outer-prompt's width will be 92/100 * 88vw = 80.96vw ~ 80 vw; */
 
 .username-input > input,
 .room-id-input > input {
-    width: 80.96vw;
     margin-top: 4px;
     padding: 6px;
     outline: none;
     border: 1px solid #f8f8f8;
     background-color: var(--elem-bg-color);
     color: var(--elem-text-color);
-    transition: all 0.5s;
+    transition: all 150ms;
     border-radius: 6px;
     font-size: 11pt;
+    width: 100%;
 }
 
 .username-input > input:focus,
 .room-id-input > input:focus {
-    border: 2px solid var(--green-color);
+    border: 1px double var(--green-color);
 }
 
 @font-face {
@@ -395,12 +411,12 @@ main {
     z-index: 1;
 }
 .game {
-    height: 96%;
     width: 96%;
     color: white;
     display: grid;
     grid-template-columns: repeat(5, 20%);
     grid-template-rows: repeat(6, 14%);
+    padding: 0.725rem 0;
 }
 .cells,
 .cell-dummy {
@@ -469,7 +485,6 @@ footer {
     background: rgba(96, 198, 137, 0.4);
     color: whitesmoke;
     padding: 8px;
-    margin-bottom: 2vh;
     border-radius: 6px;
     font-size: 4.5vmin;
     cursor: pointer;
